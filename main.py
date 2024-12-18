@@ -1,3 +1,3 @@
-import colorgram
+from env import colorgram
 
-painting_colors = colorgram.extract("painting.jpg", 6)
+colors = colorgram.extract("painting.jpg",6)
