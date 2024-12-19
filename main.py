@@ -2,9 +2,12 @@ import colorgram
 
 colors = colorgram.extract("painting.jpg",6)
 
-color_values = []
+rgb_values = []
 
 for rgb in range(len(colors)):
-    color_group = ((colors[rgb].rgb.r), (colors[rgb].rgb.g), (colors[rgb].rgb.b))
-    color_values.append(color_group)
-print(color_values)
+    r = colors[rgb].rgb.r
+    g = colors[rgb].rgb.g
+    b = colors[rgb].rgb.b
+    color_group = (r,g,b)
+    rgb_values.append(color_group)
+print(rgb_values)
