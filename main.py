@@ -23,19 +23,32 @@ Screen = turtle.Screen()
 """Changes the default colormode from floating point numbers"""
 turtle.colormode(255)
 
-dot_size = 20
-gap_distance = dot_size * 2
-start_pos = (-Screen.window_width()/2) + gap_distance
-thomas.teleport(x= start_pos)
+# dot_size = 20
+# gap_distance = dot_size * 2
+print(Screen.window_width()) #- used to print out the width of our window.
+print(Screen.window_height()) #- used to print out the height of our window.
+
+"""Designating the starting coordinates of our turtle object. """
+# x_start = (-Screen.window_width()/2) + gap_distance
+# y_start = (-Screen.window_height()/2) + gap_distance
+# thomas.teleport(x= x_start, y=y_start)
+
+def paint_params(dot_size):
+    gap_distance = dot_size * 2
+    x_start = (-Screen.window_width()/2) + gap_distance
+    y_start = (-Screen.window_height()/2) + gap_distance
+    return x_start, y_start
+
+print(paint_params(20))
 
 color_list = [(198, 13, 32), (248, 236, 25), (40, 76, 188), (39, 216, 69), 
 (238, 227, 5), (227, 159, 49), (29, 40, 154), (212, 76, 15), (17, 153, 17), (241, 36, 161), (195, 16, 12), (223, 21, 120), (68, 10, 31), 
 (61, 15, 8), (223, 141, 206), (11, 97, 62), (219, 159, 11), (54, 209, 229), (19, 21, 49), (238, 157, 216), (79, 74, 212), (10, 228, 238), 
 (73, 212, 168), (93, 233, 198), (65, 231, 239), (217, 88, 51)]
 
-for x in range(10):
-    thomas.dot(dot_size,(random.choice(color_list)))
-    start_pos += gap_distance
-    thomas.teleport(x=start_pos)
+# for x in range(10):
+#     thomas.dot(dot_size,(random.choice(color_list)))
+#     x_start += gap_distance
+#     thomas.teleport(x=x_start, y=y_start)
 
 Screen.exitonclick()
