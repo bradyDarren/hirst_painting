@@ -24,7 +24,8 @@ Screen = turtle.Screen()
 turtle.colormode(255)
 
 dot_size = 20
-start_pos = (-Screen.window_width()/2) + (dot_size*2)
+gap_distance = dot_size * 2
+start_pos = (-Screen.window_width()/2) + gap_distance
 thomas.teleport(x= start_pos)
 
 color_list = [(198, 13, 32), (248, 236, 25), (40, 76, 188), (39, 216, 69), 
@@ -34,7 +35,7 @@ color_list = [(198, 13, 32), (248, 236, 25), (40, 76, 188), (39, 216, 69),
 
 for x in range(10):
     thomas.dot(dot_size,(random.choice(color_list)))
-    start_pos += 30
+    start_pos += gap_distance
     thomas.teleport(x=start_pos)
 
 Screen.exitonclick()
