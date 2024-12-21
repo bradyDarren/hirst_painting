@@ -34,18 +34,24 @@ def paint_params(dot_size):
     return [x_start, y_start]
 
 """setting intital coordinates of our turtle object"""
-x_cord = thomas.teleport(x=paint_params(20)[0])
-y_cord = thomas.teleport(y=paint_params(20)[1])
+intial_x_cord = thomas.teleport(x=paint_params(20)[0])
+intial_y_cord = thomas.teleport(y=paint_params(20)[1])
 
 color_list = [(198, 13, 32), (248, 236, 25), (40, 76, 188), (39, 216, 69), 
 (238, 227, 5), (227, 159, 49), (29, 40, 154), (212, 76, 15), (17, 153, 17), (241, 36, 161), (195, 16, 12), (223, 21, 120), (68, 10, 31), 
 (61, 15, 8), (223, 141, 206), (11, 97, 62), (219, 159, 11), (54, 209, 229), (19, 21, 49), (238, 157, 216), (79, 74, 212), (10, 228, 238), 
 (73, 212, 168), (93, 233, 198), (65, 231, 239), (217, 88, 51)]
 
-for x in range(23):
+current_x_cord = thomas.xcor()
+current_y_cord = thomas.ycor()
+
+print(Screen.window_height())
+print(Screen.window_width())
+
+while thomas.xcor() <= 600: 
+    print(thomas.position())
     thomas.dot(20,(random.choice(color_list)))
     thomas.teleport(x=thomas.xcor()+ 40)
-    print(thomas.xcor())
-
+    
 
 Screen.exitonclick()
